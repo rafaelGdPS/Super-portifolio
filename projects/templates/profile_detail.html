@@ -7,4 +7,27 @@
  <a href="{{profile.linkedin}}">Linkedin</a>
  <a href="{{profile.github}}">GitHub</a>
  <p>{{profile.bio}}</p>
+
+ <h2>Projetos</h2>
+ <ul>
+  {% for project in profile.projects.all %}
+    <li>
+      <h3>
+        {{project.name}}
+      </h3>
+      <p>{{project.description}}</p>
+      <p>{{project.keyword}}</p>
+      <p>{{project.key_skill}}</p>
+    </li>
+  {% endfor %}
+ </ul>
+ <h2>Certificados</h2>
+ <ul>
+   {% for certificate in profile.certificates.all %}
+      <li>
+        <h3>{{certificate.name}}</h3>
+        <h3>{{certificate.certifying_institution.name}}</h3>
+      </li>
+   {% endfor %}
+ </ul>
 {% endblock %}
